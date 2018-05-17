@@ -1,5 +1,6 @@
 //day 2 and day 3
 const form = document.querySelector('#itemForm')
+let itemArray = new Array
 
 
 const makeListItem = function(data) {
@@ -27,11 +28,13 @@ function makeList(data) {
 const handleSubmit = function(ev) {
     ev.preventDefault()
     const f = ev.target
-    // const item = {
-    //     itemName: f.itemName.value,
-    // }
 
     const itemName = f.itemName.value
+    const thing = {
+        name: itemName,
+    }
+    //add items to an array
+    itemArray.push(thing)
     
     const items = document.querySelector('#items')
 
