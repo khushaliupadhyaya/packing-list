@@ -1,17 +1,20 @@
 //day 2 and day 3
 const form = document.querySelector('#itemForm')
 let itemArray = new Array
+//let item
 
 
 function makeList(itemName) {
     const list = document.createElement('ul')
 
-    const item = document.createElement('li')
+    //const item = document.createElement('li')
+    item = document.createElement('li')
     item.textContent = itemName
 
     const deleteButton = document.createElement('button')
     deleteButton.innerHTML = 'Delete'
     deleteButton.addEventListener('click', deleteItem)
+    //deleteButton.addEventListener('click', deleteFromArray(item))
     //deleteButton.setAttribute('type', 'reset')
     // deleteButton.addEventListener('onclick', function(e) {
     //     node.parentNode.removeChild(node);
@@ -26,8 +29,16 @@ function deleteItem(ev) {
     //var element = `${itemName}`
     ev.preventDefault()
     const btn = ev.target
+    //gets the button but cannot access to the name/li that the button is in. Unable to access the actual element NAME
     btn.parentNode.remove()
+    itemArray.splice(itemArray.indexOf(btn), 1)
+    // const l = btn.name;
+    debugger
 }
+
+// function deleteFromArray(item) {
+//     itemArray.splice(itemArray.indexOf(item), 1)
+// }
 
 const handleSubmit = function(ev) {
     ev.preventDefault()
