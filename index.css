@@ -1,7 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Dosis');
 
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
 body {
+    text-align: center;
     font-family: 'Slabo 27px', serif;
+    background-image: url("https://www.telegraph.co.uk/content/dam/Travel/2018/January/white-plane-sky.jpg?imwidth=1240, https://www.telegraph.co.uk/travel/travel-truths/why-planes-are-painted-white/");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 main {
@@ -10,11 +23,17 @@ main {
 }
 
 #userForm {
-    background-color: #eeeeee;
+    background-color: white;
     padding: 1rem;
-    border: 1px solid #e3e3e3
+    border: 1px solid #e3e3e3;
+    text-align: center;
+}
+html {
+    width: 100%;
+    height: 100%;
 }
 
 label {
     display: block;
+    text-align: center;
 }
