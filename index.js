@@ -3,26 +3,30 @@ const form = document.querySelector('#itemForm')
 let itemArray = new Array
 
 
-const makeListItem = function(data) {
+function makeList(itemName) {
+    const list = document.createElement('ul')
+
     const item = document.createElement('li')
-    item.textContent = data
+    item.textContent = itemName
 
-    // item.textContent = `${label}: ${value}`
-    // item.textContent = `${label}: ` 
+    const deleteButton = document.createElement('button')
+    deleteButton.innerHTML = 'Delete'
+    deleteButton.addEventListener('click', deleteItem)
+    //deleteButton.setAttribute('type', 'reset')
+    // deleteButton.addEventListener('onclick', function(e) {
+    //     node.parentNode.removeChild(node);
+    // });
 
-    return item
+    list.appendChild(item)
+    list.appendChild(deleteButton)
+    return list
 }
 
-function makeList(data) {
-    const list = document.createElement('ul')
-    //const labels = Object.keys(data)
-    //for each label, do this (arrow function)
-    //labels.forEach(label => {
-    //    const item = makeListItem(label, data[label])
-    
-    const item = makeListItem(data)
-    list.appendChild(item)
-    return list
+function deleteItem(ev) {
+    //var element = `${itemName}`
+    ev.preventDefault()
+    const btn = ev.target
+    btn.parentNode.remove()
 }
 
 const handleSubmit = function(ev) {

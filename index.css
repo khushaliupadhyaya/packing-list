@@ -18,15 +18,3 @@ main {
 label {
     display: block;
 }
-
-dl {
-    padding: 1rem;
-}
-
-dl > li {
-    list-style: none;
-}
-
-dl:nth-of-type(even) {
-    background-color: whitesmoke;
-}
